@@ -13,8 +13,8 @@
     replace: '0.0.0.0'
 - name: start mongodb
   ansible.builtin.sysytemd:
-   name: mongod
-   state: restarted
-   enabled: yes
+    name: mongod
+    state: restarted
+    enabled: yes
   
     
