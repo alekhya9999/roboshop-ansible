@@ -1,9 +1,4 @@
-- name: Install nginx
+- name: Install Nginx
   ansible.builtin.yum:
-  name: nginx
-  state: installed
-  register: out
- 
--name: out
- debug:
-   msg: "{{out}}"
+    name: nginx
+    state: installed
