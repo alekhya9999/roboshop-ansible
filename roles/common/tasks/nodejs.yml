@@ -45,8 +45,4 @@
 
 - name: loadschema
   import_tasks: "{{schema_type}}-schema.yml
-  when: schema_load
-  
-  
-  
-  
+   when: schema_load      
