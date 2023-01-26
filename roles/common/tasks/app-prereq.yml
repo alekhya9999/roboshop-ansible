@@ -1,0 +1,20 @@
+- name: Install Nodejs dependencies
+  community.general.npm:
+    path: /app
+    state: latest
+
+- name: COpy SystemD file
+  ansible.builtin.copy:
+    src: "{{component}}.service"
+    dest: /etc/systemd/system/{{component}}.service
+
+- name: Start {{component}} Service
+  ansible.builtin.systemd:
+    name: "{{component}}"
+    daemon_reload: yes
+    enabled: yes
+    state: restarted
+
+- name: Load Schema
+  ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
+  when: schema_load
