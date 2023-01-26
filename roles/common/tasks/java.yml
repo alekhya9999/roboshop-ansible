@@ -2,3 +2,13 @@
   ansible.builtin.yum:
      name: maven
      state: installed
+- name: App pre-req
+  ansible.builtin.include_tasks: "app-prereq.yml"
+  
+- name: maven build
+  ansible.builtin.shell: mvn clean package
+  args: 
+    chdir: /app
+    
+- name: SystemD setup
+  ansible.builtin.include_tasks: "systemd.yml"
