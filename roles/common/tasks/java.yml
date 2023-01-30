@@ -2,6 +2,7 @@
   ansible.builtin.yum:
      name: maven
      state: installed
+     
 - name: App pre-req
   ansible.builtin.include_tasks: "app-prereq.yml"
   
