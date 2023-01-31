@@ -7,7 +7,7 @@
   ansible.builtin.include_tasks: "app-prereq.yml"
 
   
-- name: maven build
+- name: Golang Dependencies
   ansible.builtin.shell: go mod init dispatch ;go mod get ;go build
   args: 
     chdir: /app
