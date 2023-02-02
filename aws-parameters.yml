@@ -33,5 +33,5 @@
 
 
               ###PASSWORDS ARE FOR LAB PURPOSE ONLY
-        - {name: "dev.payment.AMQP_PASS",value: "roboshop"}
+        - {name: "dev.payment.AMQP_PASS",value: "roboshop123"}
 
